@@ -80,6 +80,7 @@
 	<!-- Services -->
 	<bean id="userService" class="com.genefo.services.impl.UserServiceImpl" />
 	<bean id="profileService" class="com.genefo.services.impl.ProfileServiceImpl" />
+	<bean id="genderService" class="com.genefo.services.impl.GenderServiceImpl" />
 	
 	
 			
