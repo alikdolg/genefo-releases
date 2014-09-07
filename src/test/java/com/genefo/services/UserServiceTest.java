@@ -1,10 +1,9 @@
 package com.genefo.services;
 
-import static org.junit.Assert.*;
-
-import java.util.List;
-
+import org.hibernate.Session;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +16,8 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.genefo.persistence.models.Gender;
-import com.genefo.persistence.models.Role;
+import com.genefo.persistence.models.Profile;
 import com.genefo.persistence.models.User;
-import com.genefo.persistence.models.UserStatus;
 
 
 /**
@@ -43,47 +40,61 @@ public class UserServiceTest {
 	@Autowired
 	UserService userService;
 	
+	@Autowired
+	ProfileService profileService;
+	
 	@Test
 	public void testCreateNewUser() {
-		User defUser = createDefaultUser();
+		User defUser = userService.createTestUser();
 		User resUser = userService.add(defUser);
 		Assert.assertNotNull(resUser);
 		Assert.assertEquals(defUser, resUser);
 	}
 	
 	@Test
-	@DependsOn("com.genefo.services.UserServiceTest#testCreateNewUser")
 	public void testHasExist() {
-		User defUser = createDefaultUser();
-		Assert.assertTrue(userService.hasExist(defUser)); 
+		User defUser = userService.createTestUser();
+		User resUser = userService.add(defUser);
+		Assert.assertTrue(userService.hasExist(resUser)); 
+	}
+	
+	
+	@Test
+	public void testGetUserByEMail() {
+		User defUser = userService.createTestUser();
+		User resUser = userService.add(defUser);
+		resUser = userService.getUserByEMail("aa@bb.com");
+		Assert.assertNotNull(resUser);
+	}
+
+	
+	@Test
+	public void testDeleteUser() {
+		User defUser = userService.createTestUser();
+		User resUser = userService.add(defUser);
+		userService.remove(resUser);
 	}
 	
 	@Test
-	@DependsOn("com.genefo.services.UserServiceTest#testCreateNewUser")
-	public void testDeleteUser() {
-		User defUser = createDefaultUser();
-		userService.remove(defUser);
+	public void testCreateNewUserWithProfile() {
+		User defUser = userService.createTestUser();
+		User resUser = userService.add(defUser);
+		Profile prof = profileService.createTestProfile();
+		resUser.addProfile(prof);
+		profileService.add(prof);
+		
+		resUser = userService.getUserByEMail(resUser.getEmail());
+		Assert.assertNotNull(resUser);
+		Assert.assertNotNull(resUser.getProfiles());
+		Assert.assertEquals(1, resUser.getProfiles().size());
 	}
+	
 
-	private User createDefaultUser() {
-		User u1 = new User();
-		u1.setLastName("LastName");
-		u1.setFirstName("FirstName");
-		u1.setEmail("EMail");
-
-		Gender gender = new Gender();
-		gender.setId(1);
-		u1.setGender(gender);
-		
-		u1.setPassword("password");
-		
-		Role role = new Role();
-		role.setId(1);
-		u1.setRole(role);
-		
-		u1.setStatus(UserStatus.Created);
-		return u1;
-		
-	}
-
+	@Before
+	@After
+    public void cleanup() {
+		userService.deleteAll();
+    }
+	
+	
 }

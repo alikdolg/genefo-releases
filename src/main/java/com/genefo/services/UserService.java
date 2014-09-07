@@ -2,6 +2,7 @@ package com.genefo.services;
 
 import java.util.List;
 
+import com.genefo.persistence.models.Profile;
 import com.genefo.persistence.models.User;
 
 /**
@@ -11,7 +12,9 @@ import com.genefo.persistence.models.User;
  */
 public interface UserService extends AbstractServices<User> {
 
-	//List<User> geAlltUsers();
 	User getUserByEMail(String email);
 	boolean hasExist(User user);
+	User createTestUser();
+	void addProfile(User user, Profile  prof);
+	void deleteProfile(User user, Profile prof);
 }

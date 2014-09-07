@@ -1,12 +1,14 @@
 package com.genefo.services.impl;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.genefo.persistence.customdaosupport.GenericDao;
+import com.genefo.persistence.models.User;
 import com.genefo.services.AbstractServices;
 
 /**
@@ -70,4 +72,16 @@ public abstract class BaseServiceImpl<T, ID extends Serializable> implements Abs
 	
 	public abstract GenericDao<T, ID> getDAO();
 	public abstract Logger getServiceLogger();
+	
+	public void delete(T[] entities) {
+		getDAO().delete(entities);		
+	}
+
+	public void deleteAll() {
+		getDAO().delete(findAll());
+	}
+
+	public List<T> findAll() {
+		return getDAO().findAll();
+	}
 }
