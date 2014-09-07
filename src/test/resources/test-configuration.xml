@@ -65,22 +65,18 @@
   </bean>
   <bean id="persistenceExceptionTranslationPostProcessor"
     class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
-    <!-- DB objects -->
+    <!-- DB (DAO) objects -->
   	<bean id="userDAOImpl" class="com.genefo.persistence.dao.impl.UserDAOImpl"></bean>
 	<bean id="genderDAOImpl" class="com.genefo.persistence.dao.impl.GenderDAOImpl" />
-
 	<bean id="profileDAOImpl" class="com.genefo.persistence.dao.impl.ProfileDAOImpl" />
-
 	<bean id="roleDAOImpl" class="com.genefo.persistence.dao.impl.RoleDAOImpl" />
-
 	<bean id="relationDAOImpl" class="com.genefo.persistence.dao.impl.RelationDAOImpl" />
-	
 	<bean id="cityDAOImpl" class="com.genefo.persistence.dao.impl.CityDAOImpl" />
-	
 	<!-- Services -->
 	<bean id="userService" class="com.genefo.services.impl.UserServiceImpl" />
 	<bean id="profileService" class="com.genefo.services.impl.ProfileServiceImpl" />
 	<bean id="genderService" class="com.genefo.services.impl.GenderServiceImpl" />
+	<bean id="roleService" class="com.genefo.services.impl.RoleServiceImpl" />
 	
 	
 			

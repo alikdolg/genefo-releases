@@ -20,7 +20,8 @@ import com.genefo.services.AbstractServices;
  */
 @Service
 @Transactional
-public abstract class BaseServiceImpl<T, ID extends Serializable> implements AbstractServices<T> {
+public abstract class BaseServiceImpl<T, ID extends Serializable> extends ReadOnlyServiceImpl<T, ID>
+	implements AbstractServices<T> {
 
 	/*
 	 * (non-Javadoc)
@@ -70,18 +71,11 @@ public abstract class BaseServiceImpl<T, ID extends Serializable> implements Abs
 
 	}
 	
-	public abstract GenericDao<T, ID> getDAO();
-	public abstract Logger getServiceLogger();
-	
 	public void delete(T[] entities) {
 		getDAO().delete(entities);		
 	}
 
 	public void deleteAll() {
 		getDAO().delete(findAll());
-	}
-
-	public List<T> findAll() {
-		return getDAO().findAll();
 	}
 }

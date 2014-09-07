@@ -1,6 +1,5 @@
 package com.genefo.services;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import org.junit.Assert;
@@ -16,7 +15,7 @@ import org.springframework.test.context.transaction.TransactionalTestExecutionLi
 import org.springframework.transaction.annotation.Transactional;
 
 import com.genefo.persistence.models.Gender;
-import com.genefo.persistence.models.Region;
+import com.genefo.persistence.models.Role;
 
 @ContextConfiguration(locations={		
 		"/test-configuration.xml"
@@ -27,16 +26,17 @@ import com.genefo.persistence.models.Region;
 	TransactionalTestExecutionListener.class})
 @Transactional
 @TransactionConfiguration(defaultRollback=true)
-public class GenderServiceTest {
+public class RoleServiceTest {
 
 	@Autowired
-	GenderService genderService;
+	RoleService roleService;
 	
 	@Test
-	public void testGetAllGenders() {
-		List<Gender> genders = genderService.findAll();
-		Assert.assertNotNull(genders);		
-		Assert.assertFalse(genders.size() == 0);
+	public void testGetAllRoles() {
+		List<Role> roles = roleService.findAll();
+		Assert.assertNotNull(roles);		
+		Assert.assertFalse(roles.size() == 0);
 	}
+	
 	
 }
