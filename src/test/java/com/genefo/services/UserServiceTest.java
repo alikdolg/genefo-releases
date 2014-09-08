@@ -1,13 +1,11 @@
 package com.genefo.services;
 
-import org.hibernate.Session;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.DependsOn;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -26,16 +24,7 @@ import com.genefo.persistence.models.User;
  *
  */
 
-@ContextConfiguration(locations={		
-		"/test-configuration.xml"
-})
-@RunWith(SpringJUnit4ClassRunner.class)
-@TestExecutionListeners({
-	DependencyInjectionTestExecutionListener.class,
-	TransactionalTestExecutionListener.class})
-@Transactional
-@TransactionConfiguration(defaultRollback=false)
-public class UserServiceTest {
+public class UserServiceTest extends AbstractServiceTest{
 
 	@Autowired
 	UserService userService;

@@ -1,14 +1,10 @@
 package com.genefo.services.impl;
 
 import java.io.Serializable;
-import java.util.List;
 
-import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.genefo.persistence.customdaosupport.GenericDao;
-import com.genefo.persistence.models.User;
 import com.genefo.services.AbstractServices;
 
 /**
@@ -72,10 +68,12 @@ public abstract class BaseServiceImpl<T, ID extends Serializable> extends ReadOn
 	}
 	
 	public void delete(T[] entities) {
+		getServiceLogger().debug("In function delete("+entities.getClass().getName()+") ");
 		getDAO().delete(entities);		
 	}
 
 	public void deleteAll() {
+		getServiceLogger().debug("In function deleteAll() ");
 		getDAO().delete(findAll());
 	}
 }

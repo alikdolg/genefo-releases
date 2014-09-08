@@ -1,9 +1,6 @@
 package com.genefo.services.impl;
 
 import org.apache.log4j.Logger;
-import org.hibernate.Session;
-import org.junit.After;
-import org.junit.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -19,6 +16,11 @@ import com.genefo.persistence.models.UserStatus;
 import com.genefo.services.UserService;
 import com.genefo.services.utils.ValidationUtils;
 
+/**
+ * 
+ * @author Alexey
+ *
+ */
 @Transactional(propagation=Propagation.REQUIRED, readOnly=false)
 @Service("userService")
 public class UserServiceImpl extends BaseServiceImpl<User, Long> implements UserService {

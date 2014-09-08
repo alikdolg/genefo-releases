@@ -1,7 +1,5 @@
 package com.genefo.services;
 
-import java.util.List;
-
 import com.genefo.persistence.models.Profile;
 import com.genefo.persistence.models.User;
 

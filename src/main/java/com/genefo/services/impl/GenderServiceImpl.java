@@ -11,6 +11,11 @@ import com.genefo.persistence.dao.GenderDAO;
 import com.genefo.persistence.models.Gender;
 import com.genefo.services.GenderService;
 
+/**
+ * 
+ * @author Alexey
+ *
+ */
 @Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 @Service("genderService")
 public class GenderServiceImpl extends ReadOnlyServiceImpl<Gender, Integer> implements GenderService {

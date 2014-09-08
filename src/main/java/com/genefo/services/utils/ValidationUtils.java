@@ -3,6 +3,11 @@ package com.genefo.services.utils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * 
+ * @author Alexey
+ *
+ */
 public class ValidationUtils {
 
 	public static boolean isEMailValid(String email) {

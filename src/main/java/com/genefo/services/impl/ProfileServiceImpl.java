@@ -17,9 +17,13 @@ import com.genefo.persistence.models.City;
 import com.genefo.persistence.models.Gender;
 import com.genefo.persistence.models.Profile;
 import com.genefo.persistence.models.Relation;
-import com.genefo.persistence.models.User;
 import com.genefo.services.ProfileService;
 
+/**
+ * 
+ * @author Alexey
+ *
+ */
 @Transactional(propagation=Propagation.REQUIRED, readOnly=false)
 @Service("profileService")
 public class ProfileServiceImpl extends BaseServiceImpl<Profile, Long>

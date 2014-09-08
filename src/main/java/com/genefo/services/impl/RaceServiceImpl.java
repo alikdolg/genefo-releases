@@ -7,9 +7,9 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.genefo.persistence.customdaosupport.GenericDao;
-import com.genefo.persistence.dao.RoleDAO;
-import com.genefo.persistence.models.Role;
-import com.genefo.services.RoleService;
+import com.genefo.persistence.dao.RaceDAO;
+import com.genefo.persistence.models.Race;
+import com.genefo.services.RaceService;
 
 /**
  * 
@@ -17,21 +17,22 @@ import com.genefo.services.RoleService;
  *
  */
 @Transactional(propagation=Propagation.REQUIRED, readOnly=true)
-@Service("roleService")
-public class RoleServiceImpl extends ReadOnlyServiceImpl<Role, Integer> implements RoleService {
+@Service("raceService")
+public class RaceServiceImpl extends ReadOnlyServiceImpl<Race, Integer> implements RaceService {
 
-	private static Logger logger = Logger.getLogger(RoleServiceImpl.class);
+	private static Logger logger = Logger.getLogger(RaceServiceImpl.class);
 	
 	@Autowired
-	RoleDAO genderDao;
+	RaceDAO raceDao; 
 	
 	@Override
-	public GenericDao<Role, Integer> getDAO() {
-		return genderDao;
+	public GenericDao<Race, Integer> getDAO() {
+		return raceDao;
 	}
 
 	@Override
 	public Logger getServiceLogger() {
 		return logger;
 	}
+
 }
