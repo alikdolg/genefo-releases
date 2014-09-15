@@ -71,11 +71,15 @@
 	<bean id="profileDAOImpl" class="com.genefo.persistence.dao.impl.ProfileDAOImpl" />
 	<bean id="roleDAOImpl" class="com.genefo.persistence.dao.impl.RoleDAOImpl" />
 	<bean id="relationDAOImpl" class="com.genefo.persistence.dao.impl.RelationDAOImpl" />
-	<bean id="raceDAOImpl" class="com.genefo.persistence.dao.impl.RaceDAOImpl" />
+	<bean id="raceDAO" class="com.genefo.persistence.dao.impl.RaceDAOImpl" />
 	
 	<bean id="cityDAOImpl" class="com.genefo.persistence.dao.impl.CityDAOImpl" />
 	<bean id="countryDAOImpl" class="com.genefo.persistence.dao.impl.CountryDAOImpl" />
 	<bean id="regionDAOImpl" class="com.genefo.persistence.dao.impl.RegionDAOImpl" />
+	
+	<bean id="conditionsDAOImpl" class="com.genefo.persistence.dao.impl.ConditionsDAOImpl" />
+	<bean id="geneDAOImpl" class="com.genefo.persistence.dao.impl.GeneDAOImpl" />
+	<bean id="mutationDAOImpl" class="com.genefo.persistence.dao.impl.MutationDAOImpl" />
 	<!-- Services -->
 	<bean id="userService" class="com.genefo.services.impl.UserServiceImpl" />
 	<bean id="profileService" class="com.genefo.services.impl.ProfileServiceImpl" />
@@ -85,7 +89,7 @@
 	<bean id="cityService" class="com.genefo.services.impl.CityServiceImpl" />
 	<bean id="countryService" class="com.genefo.services.impl.CountryServiceImpl" />
 	<bean id="regionService" class="com.genefo.services.impl.RegionServiceImpl" />
-	
+	<bean id="conditionGeneMaintenanceService" class="com.genefo.services.impl.ConditionGeneMaintenanceServiceImpl" />
 	
 			
 </beans>
