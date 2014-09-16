@@ -59,7 +59,7 @@ public class LocationServiceTest extends AbstractServiceTest{
 		//get all countries
 		List<Country> countries = countryService.findAll();
 		//select one of country - for example with index 10
-		Country country = countries.get(10);
+		Country country = countries.get(9);
 		//get all regions from this country
 		List<Region> regions = country.getRegions();
 		//select one region - for example index 0
