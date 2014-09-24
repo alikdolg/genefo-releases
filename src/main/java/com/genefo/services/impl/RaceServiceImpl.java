@@ -18,7 +18,7 @@ import com.genefo.services.RaceService;
  */
 @Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 @Service("raceService")
-public class RaceServiceImpl extends ReadOnlyServiceImpl<Race, Integer> implements RaceService {
+public class RaceServiceImpl extends ReadOnlyServiceImpl<Race, Integer> implements RaceService<Integer> {
 
 	private static Logger logger = Logger.getLogger(RaceServiceImpl.class);
 	

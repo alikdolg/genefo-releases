@@ -1,5 +1,6 @@
 package com.genefo.services;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.genefo.persistence.models.City;
@@ -11,7 +12,7 @@ import com.genefo.persistence.models.Region;
  * @author Alexey
  *
  */
-public interface CityService extends ReadOnlyServices<City>{
+public interface CityService<ID extends Serializable> extends ReadOnlyServices<City, ID>{
 
 	/**
 	 * 

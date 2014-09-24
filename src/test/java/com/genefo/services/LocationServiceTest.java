@@ -38,7 +38,10 @@ public class LocationServiceTest extends AbstractServiceTest{
 	@Test
 	public void testGetRegionsByCountry() {
 		List<Country> countries = countryService.findAll();
-		List<Region> regions = countries.get(3).getRegions();
+		Hibernate.initialize(countries.get(3));
+		Country country = countries.get(3);
+		Hibernate.initialize(country.getRegions());
+		List<Region> regions = country.getRegions();
 		
 		Assert.assertNotNull(regions);
 		Assert.assertTrue(regions.size() > 0);
@@ -47,6 +50,7 @@ public class LocationServiceTest extends AbstractServiceTest{
 	@Test
 	public void testCityByCountry() {
 		List<Country> countries = countryService.findAll();
+		Hibernate.initialize(countries.get(10));
 		Country country = countries.get(10);
 		Hibernate.initialize(country.getCities());
 		List<City> cities = country.getCities();		
@@ -61,10 +65,12 @@ public class LocationServiceTest extends AbstractServiceTest{
 		//select one of country - for example with index 10
 		Country country = countries.get(9);
 		//get all regions from this country
+		Hibernate.initialize(country.getRegions());
 		List<Region> regions = country.getRegions();
 		//select one region - for example index 0
 		Region oneSelected = regions.get(0);
 		//get all cities from selected region
+		Hibernate.initialize(oneSelected.getCities());
 		List<City> cities = oneSelected.getCities();
 		Assert.assertNotNull(cities);
 		Assert.assertTrue(cities.size() > 0);

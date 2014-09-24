@@ -21,7 +21,7 @@ import com.genefo.services.CountryService;
  */
 @Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 @Service("countryService")
-public class CountryServiceImpl extends ReadOnlyServiceImpl<Country, Integer> implements CountryService {
+public class CountryServiceImpl extends ReadOnlyServiceImpl<Country, Integer> implements CountryService<Integer> {
 
 	private static Logger logger = Logger.getLogger(CountryServiceImpl.class);
 	

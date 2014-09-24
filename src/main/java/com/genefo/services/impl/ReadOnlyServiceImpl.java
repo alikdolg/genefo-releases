@@ -15,7 +15,7 @@ import com.genefo.services.ReadOnlyServices;
  * @param <T>
  * @param <ID>
  */
-public abstract class ReadOnlyServiceImpl<T, ID extends Serializable> implements ReadOnlyServices<T>{
+public abstract class ReadOnlyServiceImpl<T, ID extends Serializable> implements ReadOnlyServices<T, ID>{
 	public abstract GenericDao<T, ID> getDAO();
 	public abstract Logger getServiceLogger();
 	
@@ -23,4 +23,10 @@ public abstract class ReadOnlyServiceImpl<T, ID extends Serializable> implements
 		getServiceLogger().debug("In function findAll() ");
 		return getDAO().findAll();
 	}
+	
+	public T getByID(ID id) {
+		getServiceLogger().debug("getByID() ");
+		return getDAO().findById(id);
+	}	
+	
 }

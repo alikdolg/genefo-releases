@@ -33,7 +33,7 @@ import com.genefo.services.ProfileService;
 @Transactional(propagation=Propagation.REQUIRED, readOnly=false)
 @Service("profileService")
 public class ProfileServiceImpl extends BaseServiceImpl<Profile, Long>
-		implements ProfileService {
+		implements ProfileService<Long> {
 
 	private static Logger logger = Logger.getLogger(UserServiceImpl.class);
 	

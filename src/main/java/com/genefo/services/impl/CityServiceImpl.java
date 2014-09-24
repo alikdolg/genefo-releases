@@ -22,7 +22,7 @@ import com.genefo.services.CityService;
  */
 @Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 @Service("cityService")
-public class CityServiceImpl extends ReadOnlyServiceImpl<City, Integer> implements CityService {
+public class CityServiceImpl extends ReadOnlyServiceImpl<City, Integer> implements CityService<Integer> {
 
 	private static Logger logger = Logger.getLogger(CityServiceImpl.class);
 	

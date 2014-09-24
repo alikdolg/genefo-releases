@@ -18,7 +18,7 @@ import com.genefo.services.GenderService;
  */
 @Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 @Service("genderService")
-public class GenderServiceImpl extends ReadOnlyServiceImpl<Gender, Integer> implements GenderService {
+public class GenderServiceImpl extends ReadOnlyServiceImpl<Gender, Integer> implements GenderService<Integer> {
 
 	private static Logger logger = Logger.getLogger(GenderServiceImpl.class);
 	

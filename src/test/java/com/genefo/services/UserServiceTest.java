@@ -4,15 +4,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.TestExecutionListeners;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
-import org.springframework.test.context.transaction.TransactionConfiguration;
-import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.genefo.persistence.models.Profile;
 import com.genefo.persistence.models.User;
@@ -27,10 +19,10 @@ import com.genefo.persistence.models.User;
 public class UserServiceTest extends AbstractServiceTest{
 
 	@Autowired
-	UserService userService;
+	UserService<Long> userService;
 	
 	@Autowired
-	ProfileService profileService;
+	ProfileService<Long> profileService;
 	
 	@Test
 	public void testCreateNewUser() {
@@ -76,6 +68,19 @@ public class UserServiceTest extends AbstractServiceTest{
 		Assert.assertNotNull(resUser);
 		Assert.assertNotNull(resUser.getProfiles());
 		Assert.assertEquals(1, resUser.getProfiles().size());
+	}
+	
+	@Test
+	public void testUpdateUser() {
+		User defUser = userService.createTestUser();
+		User resUser = userService.add(defUser);
+		
+		//Update user
+		userService.getByID(529l);
+		User findU = userService.getUserByEMail("aa@bb.com");
+		
+		findU.setFirstName("Alexey");
+		userService.update(findU);
 	}
 	
 

@@ -17,7 +17,7 @@ import com.genefo.services.AbstractServices;
 @Service
 @Transactional
 public abstract class BaseServiceImpl<T, ID extends Serializable> extends ReadOnlyServiceImpl<T, ID>
-	implements AbstractServices<T> {
+	implements AbstractServices<T, ID> {
 
 	/*
 	 * (non-Javadoc)
@@ -42,9 +42,11 @@ public abstract class BaseServiceImpl<T, ID extends Serializable> extends ReadOn
 	public void update(T entity) {
 		//check exists
 		getServiceLogger().debug("In function update("+entity.getClass().getName()+") ");
-		if(getDAO().findByExample(entity).size() == 0) {
+		T currentEntity = getDAO().findById( getDAO().getID(entity));
+		if(currentEntity == null) {
 			throw new RuntimeException("Update failed. Item "+ entity + " does not exist.");
 		}
+		
 		//update
 		getDAO().update(entity);
 		getServiceLogger().info("Item "+ entity + " updated successfully.");

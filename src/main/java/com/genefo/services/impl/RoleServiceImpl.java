@@ -18,7 +18,7 @@ import com.genefo.services.RoleService;
  */
 @Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 @Service("roleService")
-public class RoleServiceImpl extends ReadOnlyServiceImpl<Role, Integer> implements RoleService {
+public class RoleServiceImpl extends ReadOnlyServiceImpl<Role, Integer> implements RoleService<Integer> {
 
 	private static Logger logger = Logger.getLogger(RoleServiceImpl.class);
 	

@@ -21,7 +21,7 @@ import com.genefo.services.RegionService;
  */
 @Transactional(propagation=Propagation.REQUIRED, readOnly=true)
 @Service("regionService")
-public class RegionServiceImpl extends ReadOnlyServiceImpl<Region, Integer> implements RegionService {
+public class RegionServiceImpl extends ReadOnlyServiceImpl<Region, Integer> implements RegionService<Integer> {
 
 	private static Logger logger = Logger.getLogger(RoleServiceImpl.class);
 	

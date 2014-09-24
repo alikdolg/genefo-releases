@@ -1,16 +1,16 @@
 package com.genefo.services;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.genefo.persistence.models.Country;
-import com.genefo.persistence.models.Region;
 
 /**
  * 
  * @author Alexey
  *
  */
-public interface CountryService extends ReadOnlyServices<Country>{
+public interface CountryService<ID extends Serializable> extends ReadOnlyServices<Country, ID>{
 
 	public List<Country> getCountryByName(String name);
 	

@@ -1,5 +1,8 @@
 package com.genefo.services;
 
+import java.io.Serializable;
+
+
 
 /**
  * 
@@ -7,7 +10,7 @@ package com.genefo.services;
  *
  * @param <T>
  */
-public interface AbstractServices<T> extends ReadOnlyServices<T>{
+public interface AbstractServices<T, ID extends Serializable> extends ReadOnlyServices<T, ID>{
 	T add(T entity);
 	void update(T entity);
 	void remove(T entity);

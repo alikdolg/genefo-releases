@@ -1,5 +1,7 @@
 package com.genefo.services;
 
+import java.io.Serializable;
+
 import com.genefo.persistence.models.Profile;
 import com.genefo.persistence.models.User;
 
@@ -9,7 +11,7 @@ import com.genefo.persistence.models.User;
  * @author Alexey
  *
  */
-public interface UserService extends AbstractServices<User> {
+public interface UserService<ID extends Serializable> extends AbstractServices<User, ID> {
 
 	User getUserByEMail(String email);
 	boolean hasExist(User user);

@@ -23,7 +23,7 @@ import com.genefo.services.utils.ValidationUtils;
  */
 @Transactional(propagation=Propagation.REQUIRED, readOnly=false)
 @Service("userService")
-public class UserServiceImpl extends BaseServiceImpl<User, Long> implements UserService {
+public class UserServiceImpl extends BaseServiceImpl<User, Long> implements UserService<Long> {
 
 	private static Logger logger = Logger.getLogger(UserServiceImpl.class);
 	
