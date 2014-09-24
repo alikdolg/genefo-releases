@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.Singleton;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -35,7 +35,6 @@ import com.genefo.services.ConditionGeneMaintenanceService;
  */
 @Transactional(propagation=Propagation.REQUIRED, readOnly=false)
 @Service("cgMaintenanceService")
-@Singleton
 public class ConditionGeneMaintenanceServiceImpl implements ConditionGeneMaintenanceService {
 	private static Logger logger = Logger.getLogger(ConditionGeneMaintenanceServiceImpl.class);
 
