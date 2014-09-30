@@ -125,10 +125,7 @@
         <name>Temporary Staging Repository</name>
         <url>file://${project.build.directory}/mvn-repo</url>
     </repository>
-	<snapshotRepository>
-		<id>snapshot-repo</id>
-		<url>https://github.com/genefotech/genefo-services/raw/master/snapshots</url>
-	</snapshotRepository>
+	
 </distributionManagement>
 	
 
