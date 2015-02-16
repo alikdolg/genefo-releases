@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>genefo-persistence</groupId>
+  <artifactId>genefo-persistence</artifactId>
+  <versioning>
+    <versions>
+      <version>0.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20150216140702</lastUpdated>
+  </versioning>
+</metadata>
