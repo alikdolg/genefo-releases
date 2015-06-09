@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>genefo-services</groupId>
+  <artifactId>genefo-services</artifactId>
+  <version>1.0.2-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20150609.085501</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20150609085501</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.0.2-20150609.085501-1</value>
+        <updated>20150609085501</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0.2-20150609.085501-1</value>
+        <updated>20150609085501</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
