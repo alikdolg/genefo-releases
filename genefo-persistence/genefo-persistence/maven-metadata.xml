@@ -3,10 +3,9 @@
   <groupId>genefo-persistence</groupId>
   <artifactId>genefo-persistence</artifactId>
   <versioning>
-    <release>1.0.136</release>
     <versions>
-      <version>1.0.136</version>
+      <version>1.1.1-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20160124113227</lastUpdated>
+    <lastUpdated>20160125154407</lastUpdated>
   </versioning>
 </metadata>
