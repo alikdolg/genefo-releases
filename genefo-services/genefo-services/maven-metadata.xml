@@ -3,9 +3,11 @@
   <groupId>genefo-services</groupId>
   <artifactId>genefo-services</artifactId>
   <versioning>
+    <release>1.1.116</release>
     <versions>
       <version>1.1.1-SNAPSHOT</version>
+      <version>1.1.116</version>
     </versions>
-    <lastUpdated>20161110082729</lastUpdated>
+    <lastUpdated>20161110095305</lastUpdated>
   </versioning>
 </metadata>
