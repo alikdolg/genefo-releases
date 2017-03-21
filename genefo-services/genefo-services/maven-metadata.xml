@@ -3,9 +3,10 @@
   <groupId>genefo-services</groupId>
   <artifactId>genefo-services</artifactId>
   <versioning>
+    <release>1.1.1-NOTEBOOK</release>
     <versions>
-      <version>1.1.1-SNAPSHOT</version>
+      <version>1.1.1-NOTEBOOK</version>
     </versions>
-    <lastUpdated>20170320144136</lastUpdated>
+    <lastUpdated>20170321155505</lastUpdated>
   </versioning>
 </metadata>
