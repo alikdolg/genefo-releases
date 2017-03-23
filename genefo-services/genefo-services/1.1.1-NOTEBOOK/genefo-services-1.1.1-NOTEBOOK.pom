@@ -14,7 +14,7 @@
   	<dependency>
   		<groupId>genefo-persistence</groupId>
   		<artifactId>genefo-persistence</artifactId>
-  		<version>1.1.1-NOTEBOOK</version>
+  		<version>1.1.1-NOTEBOOK</version> 
   	</dependency>
 	
 	<dependency>
