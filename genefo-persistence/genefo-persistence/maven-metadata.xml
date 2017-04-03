@@ -5,9 +5,8 @@
   <versioning>
     <release>1.1.1-NOTEBOOK</release>
     <versions>
-      <version>1.1.1-SNAPSHOT</version>
       <version>1.1.1-NOTEBOOK</version>
     </versions>
-    <lastUpdated>20170330141151</lastUpdated>
+    <lastUpdated>20170403154034</lastUpdated>
   </versioning>
 </metadata>
