@@ -3,11 +3,9 @@
   <groupId>genefo-persistence</groupId>
   <artifactId>genefo-persistence</artifactId>
   <versioning>
-    <release>1.1.1-NOTEBOOK</release>
     <versions>
-      <version>1.1.1-NOTEBOOK</version>
       <version>1.1.1-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20170426161410</lastUpdated>
+    <lastUpdated>20170502102440</lastUpdated>
   </versioning>
 </metadata>
